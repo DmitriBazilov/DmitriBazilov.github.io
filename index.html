@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bazilov Dmitri lab #3</h1>
+
+    <div class="ss-container">
+        <div class="slide fade">
+            <img src="img/1252417.jpg" style="width:100%">
+        </div>
+        <div class="slide fade">
+            <img src="img/1622845579_16-oir_mobi-p-priroda-relaks-priroda-krasivo-foto-16.jpg" style="width: 100%">
+        </div>
+        <div class="slide fade">
+            <img src="img/2016-12-09-relax-L5Ev.jpg" style="width: 100%;">
+        </div>
+        <div class="slide fade">
+            <img src="img/226499-Sepik.jpg" style="width: 100%;">
+        </div>
+        <img src="arrow.png" class="next" onclick="plusSlides(1)">
+        <img src="arrow-left.png" class="prev" onclick="plusSlides(-1)">
+    </div>
+
+    <div class="buttons">
+        <button id="start-slide-show" class="button" onclick="startSlideShow()">start</button>
+        <button id="change-timer" class="button" onclick="changeTime()">1 sec</button>
+        <button id="change-track" class="button" onclick="plusTrack(1)">next Track</button>
+    </div>
+    <div class="audio">
+        <audio id="audio1" class="player" src="./audio/track1.mp3" style="display: block" controls></audio>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
