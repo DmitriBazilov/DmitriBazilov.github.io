@@ -81,3 +81,67 @@ function changeTime() {
 }
 
 timerButton.onclick = changeTime;
+
+window.onload = function () {
+  let audio = document.getElementById("audio1");
+  let context = null
+
+  audio.onplay = function () {
+    if (context) {
+      return
+    }
+    context = new AudioContext();
+    let src = context.createMediaElementSource(audio);
+    let analyser = context.createAnalyser();
+
+    let canvas = document.getElementById("visual");
+    canvas.width = audio.clientWidth;
+    canvas.height = audio.clientHeight;
+
+    let ctx = canvas.getContext("2d");
+
+    src.connect(analyser);
+    analyser.connect(context.destination);
+
+    analyser.fftSize = 512;
+
+    let bufferLength = analyser.frequencyBinCount;
+
+    let dataArray = new Uint8Array(bufferLength);
+
+    let WIDTH = canvas.width;
+    let HEIGHT = canvas.height;
+
+    let barWidth = (WIDTH / bufferLength) * 2.5;
+    let barHeight;
+    let x = 0;
+
+    function renderFrame() {
+      requestAnimationFrame(renderFrame);
+
+      x = 0;
+
+      analyser.getByteFrequencyData(dataArray);
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+      for (let i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i] / 5;
+
+
+        let r = 0;
+        let g = 0;
+        let b = 0;
+
+        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+        x += barWidth + 1;
+      }
+    }
+
+    audio.play();
+    renderFrame();
+  };
+};
