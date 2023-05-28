@@ -58,9 +58,15 @@ h1 {
     margin-top: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
      
+.visual {
+    width: 800px;
+    text-align: center;
+}
+
 .player {
     width: 800px;
 }
