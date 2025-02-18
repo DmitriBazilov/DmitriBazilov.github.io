@@ -128,6 +128,45 @@ window.onload = function () {
   let audio = document.getElementById("audio1");
   let context = null
 
+    // Используем метод push для добавления Ecommerce-объекта
+    window.dataLayer.push(
+        // Ecommerce-объект
+        {
+           "ecommerce": {
+                "currencyCode": "RUB",
+                "purchase": {
+                    "actionField": {
+                        "id" : "TRX987"
+                    },
+                    "products": [
+                        {
+                            "id": "25341",
+                            "name": "Толстовка Яндекс мужская",
+                            "price": 1345.26,
+                            "brand": "Яндекс / Яndex",
+                            "category": "Одежда/Мужская одежда/Толстовки и свитшоты",
+                            "variant": "Оранжевый цвет",
+                            "quantity": 1,
+                            "list": "Одежда",
+                            "position": 1
+                        },
+                        {
+                            "id": "25314",
+                            "name": "Толстовка Яндекс женская",
+                            "price": 1543.62,
+                            "brand": "Яндекс / Яndex",
+                            "category": "Одежда/Женская одежда/Толстовки и свитшоты",
+                            "variant": "Белый цвет",
+                            "quantity": 3,
+                            "list": "Толстовки",
+                            "position": 2
+                        }
+                    ]
+                }
+            }
+        }
+    );
+
   audio.onplay = function () {
     if (context) {
       return
