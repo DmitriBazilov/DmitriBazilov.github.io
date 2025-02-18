@@ -55,5 +55,28 @@
         <canvas id="visual" class="visual"></canvas>
     </div>
     <script src="index.js"></script>
+    <script type="text/javascript">
+        // Используем метод push для добавления Ecommerce-объекта
+        window.dataLayer.push(
+            // Ecommerce-объект
+            {
+               "ecommerce": {
+                    "currencyCode": "RUB",
+                    "impressions": [
+                        {
+                            "id": "P15432",
+                            "name" : "Футболка",
+                            "price": 477.60,
+                            "brand": "Яндекс / Яndex",
+                            "category": "Одежда/Мужская одежда/Футболки",
+                            "variant" : "Красный цвет",
+                            "list": "Search",
+                            "position": 1
+                        }
+                    ]
+                }
+            }
+        );
+    </script>
 </body>
 </html>
