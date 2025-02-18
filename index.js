@@ -99,6 +99,7 @@ function changeTime() {
             plusSlides(1)
         }, 1000 * timerValue);
     }
+    console.log(timerValue);
 }
 
 timerButton.onclick = changeTime;
