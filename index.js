@@ -82,6 +82,8 @@ function test() {
             ]
         }
     });
+    console.log("datalayer push");
+    console.log(window.dataLayer);
 }
 
 function changeTime() {
