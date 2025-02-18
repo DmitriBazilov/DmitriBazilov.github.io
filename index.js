@@ -78,7 +78,7 @@ function test() {
                     "variant" : "Красный цвет",
                     "list": "Search",
                     "position": 1
-                },
+                }
             ]
         }
     });
