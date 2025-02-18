@@ -64,6 +64,25 @@ function startSlideShow() {
     }, 1000 * timerValue);
 }
 
+function test() {
+    window.dataLayer.push({
+        "ecommerce": {
+            "currencyCode": "RUB",
+            "impressions": [
+                {
+                    "id": "P15432",
+                    "name" : "Футболка",
+                    "price": 477.60,
+                    "brand": "Яндекс / Яndex",
+                    "category": "Одежда/Мужская одежда/Футболки",
+                    "variant" : "Красный цвет",
+                    "list": "Search",
+                    "position": 1
+                },
+            ]
+        }
+    });
+}
 
 function changeTime() {
     timerValue++;
