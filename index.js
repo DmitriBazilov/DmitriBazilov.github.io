@@ -100,6 +100,26 @@ function changeTime() {
         }, 1000 * timerValue);
     }
     console.log(timerValue);
+    dataLayer.push({
+        "ecommerce": {
+            "currencyCode": "RUB",    
+            "add": {
+                "products": [
+                    {
+                        "id": "43521",
+                        "name": "Сумка Яндекс",
+                        "price": 654.32,
+                        "brand": "Яндекс / Яndex",
+                        "category": "Аксессуары/Сумки",
+                        "quantity": 1,
+                        "list": "Выдача категории",
+                        "position": 2
+                    }
+                ]
+            }
+        }
+    });
+    console.log("test");
 }
 
 timerButton.onclick = changeTime;
