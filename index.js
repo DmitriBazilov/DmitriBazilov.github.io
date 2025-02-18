@@ -166,6 +166,8 @@ window.onload = function () {
             }
         }
     );
+    console.log("onload");
+    console.log(window.dataLayer);
 
   audio.onplay = function () {
     if (context) {
